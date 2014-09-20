@@ -1,0 +1,5 @@
+{
+    "name": "js-atom",
+    "description": "JavaScript implementation of ClojureScript's atoms",
+    "version": "0.1.0"
+}
