@@ -62,7 +62,7 @@ The API is designed to mirror Clojure's atoms as closely as possible. Because
 atoms are references, and not values, I didn't see any problems with defining
 the API as methods on the atom object.
 
-### `createAtom(val[, options])`
+#### `createAtom(val[, options])`
 
 Creates a new atom wrapping the provided value. `options` is optional, and
 currently only supports one option: `validator`:
@@ -75,15 +75,15 @@ atom.replace([1, 2, 3]); // OK
 atom.replace({}); // Throws exception
 ```
 
-### `atom.deref()`
+#### `atom.deref()`
 
 Returns the contained value.
 
-### `atom.reset(val)`
+#### `atom.reset(val)`
 
 Replace the current state with a new value
 
-### `atom.swap(fn[, ...])`
+#### `atom.swap(fn[, ...])`
 
 Update the state by applying the function to the current value, and setting the
 return value as the new value of the atom. Any additional arguments are passed
@@ -91,7 +91,7 @@ to the function as well, after the atom value, e.g.: `atom.swap(fn, 1, 2, 3)`
 will replace the current value with what is returned from
 `fn(atomValue, 1, 2, 3)`.
 
-### `atom.addWatch(key, function (key, ref, old, new) {})`
+#### `atom.addWatch(key, function (key, ref, old, new) {})`
 
 Add a function that will be called whenever the atom value changes. The key is
 just a string identifying this watcher - it can be used to remove the watcher
@@ -103,11 +103,11 @@ again. The callback is called with four arguments whenever the state changes
 - `old` - The previous value
 - `new` - The new value
 
-### `removeWatch(key)`
+#### `removeWatch(key)`
 
 Removes the previously added watcher.
 
-### `toString`
+#### `toString`
 
 Prints a useful string representation of the contents of the atom.
 
