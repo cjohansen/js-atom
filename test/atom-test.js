@@ -39,11 +39,7 @@ buster.testCase("Atom", {
     },
 
     "validates state changes": function () {
-        var atom = createAtom([], {
-            validator: function (v) {
-                return Array.isArray(v);
-            }
-        });
+        var atom = createAtom([], { validator: Array.isArray });
 
         assert.exception(function () { atom.reset({}); });
         assert.equals(atom.deref(), []);
