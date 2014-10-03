@@ -42,7 +42,7 @@ exports.createAtom = function createAtom(val, options) {
         },
 
         toString: function () {
-            return "Atom[" + JSON.stringify(val) + "]";
+            return "Atom(" + JSON.stringify(val) + ")";
         }
     };
 
