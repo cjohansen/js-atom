@@ -1,8 +1,12 @@
 {
-    "name": "js-atom",
-    "description": "JavaScript implementation of ClojureScript's atoms",
-    "version": "0.1.0",
-    "devDependencies": {
-        "buster": "~0.7"
-    }
+  "name": "js-atom",
+  "description": "JavaScript implementation of ClojureScript's atoms",
+  "version": "0.2.0",
+  "devDependencies": {
+    "browserify": "^6.1.0",
+    "buster": "~0.7"
+  },
+  "scripts": {
+    "bundle": "browserify -s atom -o atom-browser.js atom.js"
+  }
 }
