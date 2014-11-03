@@ -48,6 +48,12 @@ buster.testCase("Atom", {
         assert.equals(atom.deref(), [2]);
     },
 
+    "always passes validation without validator": function () {
+        var atom = createAtom([]);
+
+        refute.exception(function () { atom.reset(null); });
+    },
+
     "notifies watchers": function () {
         var atom = createAtom([]);
         var george = this.spy();

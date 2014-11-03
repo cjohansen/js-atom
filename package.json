@@ -1,7 +1,7 @@
 {
   "name": "js-atom",
   "description": "JavaScript implementation of ClojureScript's atoms",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "devDependencies": {
     "browserify": "^6.1.0",
     "buster": "~0.7"

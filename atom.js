@@ -2,7 +2,7 @@
 
 exports.createAtom = function createAtom(val, options) {
     var watchers = {};
-    var validator = options && options.validator || function (v) { return v; };
+    var validator = options && options.validator || function () { return true; };
 
     function transition(next) {
         if (!validator(next)) {
