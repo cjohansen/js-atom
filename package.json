@@ -2,6 +2,7 @@
   "name": "js-atom",
   "description": "JavaScript implementation of ClojureScript's atoms",
   "version": "0.3.0",
+  "main": "atom.js",
   "devDependencies": {
     "browserify": "^6.1.0",
     "buster": "~0.7"
