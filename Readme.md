@@ -42,7 +42,7 @@ function startApp(root) {
     state.addWatch("poll-update", render);
 
     pollForNewData(function (newData) {
-        state.replace(newData);
+        state.reset(newData);
     });
 
     // ...
@@ -71,8 +71,8 @@ currently only supports one option: `validator`:
 var createAtom = require("js-atom");
 var atom = createAtom([], { validator: Array.isArray });
 
-atom.replace([1, 2, 3]); // OK
-atom.replace({}); // Throws exception
+atom.reset([1, 2, 3]); // OK
+atom.reset({}); // Throws exception
 ```
 
 #### `atom.deref()`
