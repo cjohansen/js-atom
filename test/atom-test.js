@@ -68,5 +68,18 @@ buster.testCase("Atom", {
         assert.calledTwice(gina);
         assert.calledWith(gina, "curious gina", atom, [], [2]);
         assert.calledWith(gina, "curious gina", atom, [2], [1, 3]);
+    },
+
+    "allows watchers to be removed during notifications": function () {
+        var atom = createAtom([]);
+        atom.addWatch("curious george", function () {
+          atom.removeWatch("curious gina");
+        });
+        var gina = this.spy();
+        atom.addWatch("curious gina", gina);
+
+        atom.swap(concat, 1);
+
+        refute.called(gina);
     }
 });

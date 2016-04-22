@@ -15,7 +15,9 @@ exports.createAtom = function createAtom(val, options) {
         val = next;
 
         Object.keys(watchers).forEach(function (k) {
-            watchers[k](k, atom, prev, next);
+            if (watchers[k]) {
+                watchers[k](k, atom, prev, next);
+            }
         });
     }
 
